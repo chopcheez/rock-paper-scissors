@@ -12,20 +12,67 @@
         let computerPick = computerChoices[Math.floor(Math.random() *computerChoices.length)];
         return computerPick;
     }
-    
+
+    let whoWon;
+    let playerWin;
+    let computerWin;
+    let drawWin;
+
     let playRound = function() {
         const playerSelection = prompt('Rock, Paper, Scissors...Shoot!');
         const computerSelection = computerPlay();
+        const playerWinMessage = 'You Win! ' + playerSelection + ' beats ' + computerSelection;
+        const computerWinMessage = 'You lose! ' + computerSelection + ' beats ' + playerSelection;
+        const drawMessage = 'Draw! Both chose ' + computerSelection;
+
         if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
-            return 'Draw! Both chose ' + computerSelection;
+            whoWon = drawMessage;
+            drawWin = drawMessage;
+            console.log(whoWon);
         } else if ((playerSelection.toUpperCase() == 'ROCK') && (computerSelection.toUpperCase() == 'SCISSORS')) {
-            return 'You Win! ' + playerSelection + ' beats ' + computerSelection;
+            whoWon = playerWinMessage;
+            playerWin = playerWinMessage;
+            console.log(whoWon);
         } else if ((playerSelection.toUpperCase() == 'PAPER') && (computerSelection.toUpperCase() == 'ROCK')) {
-            return 'You Win! ' + playerSelection + ' beats ' + computerSelection;
+            whoWon = playerWinMessage;
+            playerWin = playerWinMessage;
+            console.log(whoWon);
         } else if ((playerSelection.toUpperCase() == 'SCISSORS') && (computerSelection.toUpperCase() == 'PAPER')) {
-            return 'You Win! ' + playerSelection + ' beats ' + computerSelection;
+            whoWon = playerWinMessage;
+            playerWin = playerWinMessage;
+            console.log(whoWon);
         } else {
-            return 'You lose! ' + computerSelection + ' beats ' + playerSelection;
+            whoWon = computerWinMessage;
+            computerWin = computerWinMessage;
+            console.log(whoWon);
+        }
+    }
+
+    let game = function() {
+        let round;
+        let playerWinCount = 0;
+        let computerWinCount = 0;
+        let drawCount = 0;
+        let winner;
+        for (round = 0; round < 5; round++) {
+            playRound();
+            if (whoWon == playerWin) {
+                playerWinCount++;
+            } else if (whoWon == computerWin) {
+                computerWinCount++;
+            } else {
+                drawCount++;
+            }
+        }
+        if (playerWinCount > computerWinCount) {
+            winner = 'You win the match!';
+            console.log(winner);
+        } else if (computerWinCount > playerWinCount) {
+            winner = 'You lose the match :(';
+            return console.log(winner);
+        } else {
+            winner = 'Match is a draw';
+            console.log(winner);
         }
     }
     
