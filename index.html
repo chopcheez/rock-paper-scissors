@@ -13,6 +13,22 @@
         return computerPick;
     }
     
+    let playRound = function() {
+        const playerSelection = prompt('Rock, Paper, Scissors...Shoot!');
+        const computerSelection = computerPlay();
+        if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
+            return 'Draw! Both chose ' + computerSelection;
+        } else if ((playerSelection.toUpperCase() == 'ROCK') && (computerSelection.toUpperCase() == 'SCISSORS')) {
+            return 'You Win! ' + playerSelection + ' beats ' + computerSelection;
+        } else if ((playerSelection.toUpperCase() == 'PAPER') && (computerSelection.toUpperCase() == 'ROCK')) {
+            return 'You Win! ' + playerSelection + ' beats ' + computerSelection;
+        } else if ((playerSelection.toUpperCase() == 'SCISSORS') && (computerSelection.toUpperCase() == 'PAPER')) {
+            return 'You Win! ' + playerSelection + ' beats ' + computerSelection;
+        } else {
+            return 'You lose! ' + computerSelection + ' beats ' + playerSelection;
+        }
+    }
+    
   </script>
 </body>
 </html>
