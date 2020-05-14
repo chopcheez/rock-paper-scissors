@@ -1,0 +1,1 @@
+Just a small javascript project that plays a 5 round match of Rock Paper Scissors against the computer.
