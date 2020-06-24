@@ -1,0 +1,30 @@
+body {
+    background-color: #eaeaea;
+    width: auto;
+    height: auto;
+    padding: 100px;
+    margin: 50px 50px;
+    border-style: solid;
+    border-color: #ff0000;
+    border-width: 1em;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.playButton {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+.playButton:hover {
+    transform: scale(1.2);
+}
+
+.cpuButton {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 3rem;
+}
